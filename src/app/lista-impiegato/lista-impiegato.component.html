@@ -1,0 +1,30 @@
+<p>lista-impiegato works!</p>
+<div class = "row">
+    <h2> Employee List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> First Name</th>
+            <th> Last Name </th>
+            <th> Email Id</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let impiegato of impiegato" >
+            <td> {{ impiegato.firstName }} </td>
+            <td> {{ impiegato.lastName }} </td>
+            <td> {{ impiegato.departmentId }} </td>
+            <td> {{ impiegato.hiringYear }} </td>
+            <td> {{ impiegato.city }} </td>
+            <td> {{ impiegato.region }} </td>
+            <td>
+                <button (click) = "updateEmployee(impiegato.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteEmployee(impiegato.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "employeeDetails(impiegato.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
